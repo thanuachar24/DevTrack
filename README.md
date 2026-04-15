@@ -88,17 +88,6 @@ Some examples:
 
 5. Reporter with same ID cant created
    ![alt text](image-4.png)
-   
-**Implementation notes & tips**
-- Data store: `devtrack/reporters.json` and `devtrack/issues.json` (the views read/write these files). Keep these tracked in Git if you want sample data, but exclude personal virtualenvs and SQLite DB.
-- IDs: current implementation expects numeric IDs. When adding issues/reporters via the API, include `id` in the request. You can change to server-assigned IDs later (UUIDs or incremental) if desired.
-- Validation errors return HTTP 400 with an error message. Missing resources return 404.
-- If `rest_framework` imports show unresolved in your editor, ensure the virtualenv is activated and DRF is installed.
-
-**Next steps (optional)**
-- Migrate OOP classes to Django models and use the ORM for persistence.
-- Add serializers and proper DRF views/viewsets for cleaner API handling.
-- Add tests for `models.py` validation and for endpoints.
 
 ---
 Repository layout (relevant files):
