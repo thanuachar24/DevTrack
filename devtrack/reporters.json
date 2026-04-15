@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Aarav Mehta",
+        "email": "aarav.mehta@devtrack.io",
+        "team": "backend"
+    },
+    {
+        "id": 2,
+        "name": "Sana Khan",
+        "email": "sana.khan@devtrack.io",
+        "team": "frontend"
+    },
+    {
+        "id": 3,
+        "name": "Rohit Iyer",
+        "email": "rohit.iyer@devtrack.io",
+        "team": "devops"
+    },
+    {
+        "id": 4,
+        "name": "Maya Dsouza",
+        "email": "maya.dsouza@devtrack.io",
+        "team": "qa"
+    },
+    {
+        "id": 5,
+        "name": "DJ Dsouza",
+        "email": "DJ.dsouza@devtrack.io",
+        "team": "qa"
+    }
+]
