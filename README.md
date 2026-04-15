@@ -44,6 +44,17 @@ A minimal backend API for tracking engineering issues (a stripped-down GitHub Is
  - `GET /api/issues/?status=<status>` — Filter issues by `status` (case-insensitive)
  - `GET /api/issues/?reporter_id=<id>` - Filter issues created by specific reporter using reporter_id
 
+**Design decision — reporter-scoped API**
+- **Decision:** Provide a dedicated RESTful route for fetching issues created by a specific reporter, while keeping the existing `?reporter_id=` query filter for backwards compatibility.
+- **Endpoint:** `GET /api/reporters/<id>/issues/` — returns all issues where `reporter_id == <id>`.
+- **Rationale:** Expresses the relationship in the URL, improves discoverability for clients, and aligns with common REST practices. The query parameter `?reporter_id=` remains supported as a convenient filter.
+
+Example:
+
+```bash
+curl "http://127.0.0.1:8000/api/reporters/1/issues/"
+```
+
 
 **4. Install & Run (on another machine)**
 1. Clone the repo and go to the project folder (where `manage.py` lives):
