@@ -42,18 +42,11 @@ A minimal backend API for tracking engineering issues (a stripped-down GitHub Is
  - `GET /api/issues/list/` — List all issues
  - `GET /api/issues/?id=<id>` — Get a single issue by numeric `id` (returns 404 if not found)
  - `GET /api/issues/?status=<status>` — Filter issues by `status` (case-insensitive)
- - `GET /api/issues/?reporter_id=<id>` - Filter issues created by specific reporter using reporter_id
 
 **Design decision — reporter-scoped API**
 - **Decision:** Provide a dedicated RESTful route for fetching issues created by a specific reporter, while keeping the existing `?reporter_id=` query filter for backwards compatibility.
-- **Endpoint:** `GET /api/reporters/<id>/issues/` — returns all issues where `reporter_id == <id>`.
-- **Rationale:** Expresses the relationship in the URL, improves discoverability for clients, and aligns with common REST practices. The query parameter `?reporter_id=` remains supported as a convenient filter.
-
-Example:
-
-```bash
-curl "http://127.0.0.1:8000/api/reporters/1/issues/"
-```
+- **Endpoint:** `GET /api/issues/?reporter_id=<id>` — returns all issues where `reporter_id == <id>`.
+- Example: `http://127.0.0.1:8000/api/reporters/1/issues/`
 
 
 **4. Install & Run (on another machine)**
@@ -81,7 +74,7 @@ python manage.py runserver
 
 4. The API base URL is `http://127.0.0.1:8000/api/`.
 
-**5. Add / Create Reporter and Issue using Postman**
+**5. Test the endpoints by Add / Create Reporter and Issue using Postman**
 
 Some examples:
 
